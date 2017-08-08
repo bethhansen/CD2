@@ -1,0 +1,31 @@
+{{#partial "content"}}
+<div class="jumbotron">
+<h1><strong>THE ULTIMATE CD COLLECTION</strong></h1>
+</div>
+<h1>CD</h1>
+
+{{#if cd }}
+       {{#each posts }} <!--loop-->
+        <p>Current post:</p>
+        <p>{{ content }}</p> <!--show-->
+       {{/each}}
+   {{else}} <!--no posts!-->
+    <p>No posts!</p>
+   {{/if}}
+
+<p>Add a new CD:</p>
+
+<form action="/cd/new" method="POST">
+  <label for="content">CD title:</label>
+  <input id="content" name="content" type="text">
+  <label for="content">CD artist:</label>
+  <input id="content" name="content" type="text">
+  <label for="content">CD genre:</label>
+  <input id="content" name="content" type="text">
+
+  <button type="submit" class="btn btn-default">Add CD</button>
+  <a href="/">go home</aß>
+</form>
+{{/partial}}
+
+{{> layout.hbs}}
